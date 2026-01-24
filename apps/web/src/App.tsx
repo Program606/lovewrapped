@@ -1,10 +1,10 @@
 import "./App.css";
-// import MiddleText from "@/components/centerText/middleText";
+import LoveWrappedMVP from "@/components/LoveWrapped/LoveWrappedMVP";
 
 function App() {
   return (
     <>
-      {/* <MiddleText text="Welcome to LoveWrapped!" /> */}
+      <LoveWrappedMVP />
     </>
   );
 }
