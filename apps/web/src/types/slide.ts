@@ -1,4 +1,4 @@
-export type SlideType = "intro" | "moments";
+export type SlideType = "intro" | "moments" | "letter";
 
 export type Slide =
   | {
@@ -20,6 +20,15 @@ export type Slide =
         title: string;
         body: string;
       }>;
+      bg: string;
+      accent: string;
+    }
+  | {
+      id: "letter";
+      type: "letter";
+      title: string;
+      text: string;
+      align?: "left" | "center";
       bg: string;
       accent: string;
     };
