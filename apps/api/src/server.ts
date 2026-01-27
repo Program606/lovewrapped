@@ -1,18 +1,41 @@
 import express from "express";
 import clientRouter from "./clients.js"; // or "./clients.js" if you kept JS + .d.ts
+import { connectDB, closeDB } from "./connectMongo.js";
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
-//express app
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+// Load root .env
+dotenv.config({ path: path.resolve(__dirname, "../../../.env") });
+
 const app = express();
-
-//middleware
-//- any rq looks at body and attaches to rq object
 app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log(req.path, req.method)
-  next();
+//routes
+app.use("/api", clientRouter);
+console.log("MONGO_URI =", process.env.MONGO_URI);
+if (!process.env.MONGO_URI) {
+  throw new Error("MONGO_URI is missing from root .env");
+}
+
+//start server
+async function startServer() {
+  await connectDB();
+  app.listen(process.env.PORT, () => {
+    console.log(`Server running on port ${process.env.PORT}`);
+  });
+}
+
+startServer().catch(console.error);
+
+//shutdown
+process.on("SIGINT", async () => {
+  await closeDB();
+  process.exit(0);
 });
-
-app.use('/api', clientRouter);
-
-app.listen(3001, () => console.log("API on http://localhost:3001"));
+process.on("SIGTERM", async () => {
+  await closeDB();
+  process.exit(0);
+});
