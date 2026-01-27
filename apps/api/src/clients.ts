@@ -1,14 +1,12 @@
 import express from "express";
-import cors from "cors";
 import fs from "fs/promises";
 import _ from "lodash";
 import { v4 as uuidv4 } from "uuid";
-export const app = express();
 
-app.use(cors());
-app.use(express.json());
+const router = express.Router();
 
-app.get("/api/lovewrapped/data", (req, res) => {
+//GET all client
+router.get("/", (req, res) => {
   const tops = ["Black", "White", "Red", "Blue", "Green"];
   const bottoms = ["Jeans", "Shorts", "Skirt", "Trousers"];
   const shoes = ["Sneakers", "Boots", "Sandals", "Loafers"];
@@ -20,7 +18,8 @@ app.get("/api/lovewrapped/data", (req, res) => {
     outfitId: uuidv4(),
   });
 });
-app.get("/api/lovewrapped/:id", async (req, res) => {
+//GET single client
+router.get("/:id", async (req, res) => {
   const id = req.params.id;
   let content;
 
@@ -30,10 +29,11 @@ app.get("/api/lovewrapped/:id", async (req, res) => {
     //TODO:
   }
   res.json({
-    content: content,
+    message: "Get client " + id,
   });
 });
-app.post("/api/saving", async (req, res) => {
+//POST a new client
+router.post("/", async (req, res) => {
   const id = uuidv4();
   const content = req.body.content;
 
@@ -42,8 +42,21 @@ app.post("/api/saving", async (req, res) => {
   }
   await fs.mkdir("data/comments", { recursive: true });
   await fs.writeFile(`data/comments/${id}.txt`, content);
-  
+
   res.status(201).json({
-    id: id,
+    message: `Created client ${id}`,
   });
 });
+//DELETE a client
+router.delete("/:id", async (req, res) => {
+  res.json({message: "Delete client" });
+})
+//UPDATE a client
+router.patch("/:id", async (req, res)=>{
+  res.json({message: "Update client" });
+});
+
+
+
+
+export default router;
