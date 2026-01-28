@@ -17,9 +17,29 @@ export const slides: Slide[] = [
     title: "Top 5 moments with you",
     moments: [
       {
-        imageUrl: "...",
+        imageUrl: "https://images.unsplash.com/photo-1516214104703-3e8e6f9ce83d?w=500&h=500&fit=crop",
         title: "Late-night talks",
         body: "The kind where time disappears.",
+      },
+      {
+        imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&h=500&fit=crop",
+        title: "Coffee mornings",
+        body: "Your smile over a warm cup.",
+      },
+      {
+        imageUrl: "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=500&h=500&fit=crop",
+        title: "Road trip adventures",
+        body: "Windows down, music loud, you by my side.",
+      },
+      {
+        imageUrl: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&h=500&fit=crop",
+        title: "Sunset walks",
+        body: "Golden hour with your hand in mine.",
+      },
+      {
+        imageUrl: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=500&h=500&fit=crop",
+        title: "Dancing in the kitchen",
+        body: "No music, just us and laughter.",
       },
     ],
     bg: "#111827",
