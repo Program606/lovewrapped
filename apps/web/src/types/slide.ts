@@ -1,4 +1,4 @@
-export type SlideType = "intro" | "moments" | "letter";
+export type SlideType = "intro" | "momentPage" | "moments" | "letter";
 
 export type Slide =
   | {
@@ -12,6 +12,13 @@ export type Slide =
       accent: string;
     }
   | {
+      id: string;
+      type: "momentPage";
+      momentIndex: number;
+      bg: string;
+      accent: string;
+    }
+  | {
       id: "moments";
       type: "moments";
       title: string;
@@ -19,6 +26,7 @@ export type Slide =
         imageUrl: string;
         title: string;
         body: string;
+        location?: string;
       }>;
       bg: string;
       accent: string;
