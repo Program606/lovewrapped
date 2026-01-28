@@ -1,5 +1,5 @@
 import express from "express";
-import clientRouter from "./clients.js"; // or "./clients.js" if you kept JS + .d.ts
+import clientRouter from "./clients.js";
 import { connectDB, closeDB } from "./connectMongo.js";
 import dotenv from "dotenv";
 import path from "path";

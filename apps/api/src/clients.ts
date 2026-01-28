@@ -2,7 +2,8 @@ import express from "express";
 import fs from "fs/promises";
 import _ from "lodash";
 import { v4 as uuidv4 } from "uuid";
-import {getDB} from "./connectMongo.js";
+import { getDB } from "./connectMongo.js";
+import {introReq} from "./models/clientModel.js";
 
 const router = express.Router();
 
@@ -35,29 +36,33 @@ router.get("/:id", async (req, res) => {
 });
 //POST a new client
 router.post("/", async (req, res) => {
-  const id = uuidv4();
-  const content = req.body.content;
+  const { id, type, headline, subheadline, from, to, bg, accent } = req.body;
 
-  if (!content) {
-    return res.sendStatus(400);
+  try {
+    const introSlide = await introReq.create({
+      id,
+      type,
+      headline,
+      subheadline,
+      from,
+      to,
+      bg,
+      accent,
+    });
+    res.status(200).json(introSlide);
+  } catch (err) {
+    res.status(400).json({ message: "Error creating intro slide", error: err });
   }
-  await fs.mkdir("data/comments", { recursive: true });
-  await fs.writeFile(`data/comments/${id}.txt`, content);
 
-  res.status(201).json({
-    message: `Created client ${id}`,
-  });
+  res.json({ message: `Created client ${id}` });
 });
 //DELETE a client
 router.delete("/:id", async (req, res) => {
-  res.json({message: "Delete client" });
-})
-//UPDATE a client
-router.patch("/:id", async (req, res)=>{
-  res.json({message: "Update client" });
+  res.json({ message: "Delete client" });
 });
-
-
-
+//UPDATE a client
+router.patch("/:id", async (req, res) => {
+  res.json({ message: "Update client" });
+});
 
 export default router;
