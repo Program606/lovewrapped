@@ -96,7 +96,7 @@ export function DroppingCardList({
         <motion.div
           layout
           transition={containerTransition}
-          className="flex flex-col items-center gap-3"
+          className="flex flex-col items-center gap-3 pt-8"
         >
           <AnimatePresence initial={false}>
             {shown.map((card, idx) => (
@@ -144,7 +144,7 @@ export function DroppingCardList({
 
 function HorizontalCard({ card }: { card: DroppingCard }) {
   return (
-    <div className="w-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
+    <div className="w-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.25)] py-4">
       <div className="flex items-center gap-4 p-4">
         {/* image */}
         <div className="h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-white/10">

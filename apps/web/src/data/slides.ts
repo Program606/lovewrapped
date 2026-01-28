@@ -14,10 +14,10 @@ export const slides: Slide[] = [
   {
     id: "moments",
     type: "moments",
-    title: "Top 5 moments with you",
+    title: "Top 5 moments with you..",
     moments: [
       {
-        imageUrl: "https://images.unsplash.com/photo-1516214104703-3e8e6f9ce83d?w=500&h=500&fit=crop",
+        imageUrl: "https://images.unsplash.com/photo-1752824061955-a3787752b1bc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "Late-night talks",
         body: "The kind where time disappears.",
       },
@@ -27,7 +27,7 @@ export const slides: Slide[] = [
         body: "Your smile over a warm cup.",
       },
       {
-        imageUrl: "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=500&h=500&fit=crop",
+        imageUrl: "https://images.unsplash.com/photo-1719715734324-804920841025?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "Road trip adventures",
         body: "Windows down, music loud, you by my side.",
       },
@@ -37,7 +37,7 @@ export const slides: Slide[] = [
         body: "Golden hour with your hand in mine.",
       },
       {
-        imageUrl: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=500&h=500&fit=crop",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1672855674905-4e5d8aaeb4de?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "Dancing in the kitchen",
         body: "No music, just us and laughter.",
       },
