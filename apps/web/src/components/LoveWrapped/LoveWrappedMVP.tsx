@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { slides } from "@/data/slides";
+import { dummyData } from "@/data/slidesData";
 import { slideVariants } from "@/animations/slideVariants";
 import { SlideRenderer } from "@/components/LoveWrapped/SlideRenderer";
 import { ProgressBar } from "@/components/LoveWrapped/ProgressBar";
@@ -10,9 +10,9 @@ function clamp(n: number, min: number, max: number) {
 }
 
 export default function LoveWrappedMVP() {
-  const total = slides.length;
+  const total = dummyData.length;
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
-  const current = slides[index];
+  const current = dummyData[index];
 
   const progressPct = useMemo(
     () => ((index + 1) / total) * 100,

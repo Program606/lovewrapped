@@ -1,6 +1,6 @@
 import type { Slide } from "@/types/slide";
 
-export function IntroSlide({ slide }: { slide: Extract<Slide, { type: "intro" }> }) {
+export function IntroSlide({slide}: {slide: Slide & { type: "intro" }}) {
   return (
     <div className="h-full w-full flex flex-col justify-center px-6 text-white">
       <div className="text-xs uppercase tracking-[0.25em] text-white/70">

@@ -5,7 +5,7 @@ export function MomentsSlide({
   slide,
   active = true,
 }: {
-  slide: Extract<Slide, { type: "moments" }>;
+  slide: Slide & { type: "moments" };
   active?: boolean;
 }) {
   // Convert slide.moments to DroppingCard format

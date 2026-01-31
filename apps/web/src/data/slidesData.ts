@@ -36,7 +36,7 @@ const moments = [
   },
 ];
 
-const intro = {
+const introSlide: Extract<Slide, { type: "intro" }> = {
   id: "intro",
   type: "intro" as const,
   headline: "Kyle, this is your LoveWrapped 💛",
@@ -80,4 +80,4 @@ const letter = {
   accent: "#F97316",
 };
 
-export const slides: Slide[] = [intro, ...momentPages, momentsSlide, letter];
+export const dummyData: Slide[] = [introSlide, ...momentPages, momentsSlide, letter];
