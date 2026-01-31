@@ -2,7 +2,7 @@ export type SlideType = "intro" | "momentPage" | "moments" | "letter";
 
 export type Slide =
   | {
-      id: "intro";
+      id: string;
       type: "intro";
       headline: string;
       subheadline: string;
@@ -14,12 +14,12 @@ export type Slide =
   | {
       id: string;
       type: "momentPage";
-      momentIndex: number;
       bg: string;
+      momentIndex: number;
       accent: string;
     }
   | {
-      id: "moments";
+      id: string;
       type: "moments";
       title: string;
       moments: Array<{
@@ -32,7 +32,7 @@ export type Slide =
       accent: string;
     }
   | {
-      id: "letter";
+      id: string;
       type: "letter";
       title: string;
       text: string;
