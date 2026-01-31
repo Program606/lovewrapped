@@ -50,7 +50,7 @@ const introSlide: Extract<Slide, { type: "intro" }> = {
 const statsSlide: Extract<Slide, {type:"stats"}> = {
   id: "stats",
   type: "stats" as const,
-  title: "By the numbers",
+  title: "You began talking 3587 days ago..",
   text: "42 late-night talks, 17 spontaneous laughs, 6 road trips, and one unforgettable year together.",
   bg: "#0F172A", 
   accent: "#38BDF8",  
