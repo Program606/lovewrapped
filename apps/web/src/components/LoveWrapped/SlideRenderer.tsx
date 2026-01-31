@@ -4,9 +4,11 @@ import { IntroSlide } from "./IntroSlide";
 import { MomentsSlide } from "./MomentsSlide";
 import { LetterSlide } from "./LetterSlide";
 import { MomentsSingle } from "./Moments/MomentsSingle";
+import { StatSlide } from "./StatsSlide";
 
 export function SlideRenderer({ slide }: { slide: Slide }) {
   if (slide.type === "intro") return <IntroSlide slide={slide} />;
+  if (slide.type === "stats") return <StatSlide slide={slide}/>
   if (slide.type === "momentPage") {
     const momentsSlide = dummyData.find(s => s.type === "moments");
     const moment = momentsSlide && momentsSlide.type === "moments" ? momentsSlide.moments[slide.momentIndex] : null;

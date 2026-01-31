@@ -47,6 +47,14 @@ const introSlide: Extract<Slide, { type: "intro" }> = {
   accent: "#F97316",
 };
 
+const statsSlide: Extract<Slide, {type:"stats"}> = {
+  id: "stats",
+  type: "stats" as const,
+  title: "By the numbers",
+  text: "42 late-night talks, 17 spontaneous laughs, 6 road trips, and one unforgettable year together.",
+  bg: "#0F172A", 
+  accent: "#38BDF8",  
+};
 const momentPages: Extract<Slide, { type: "momentPage" }>[] = moments.map((_, i) => ({
   id: `moment-${i}`,
   type: "momentPage" as const,
@@ -80,4 +88,5 @@ const letter = {
   accent: "#F97316",
 };
 
-export const dummyData: Slide[] = [introSlide, ...momentPages, momentsSlide, letter];
+
+export const dummyData: Slide[] = [introSlide, statsSlide, ...momentPages, momentsSlide, letter];

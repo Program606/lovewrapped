@@ -1,5 +1,5 @@
 import type { Slide } from "@/types/slide";
-import { DroppingCardList, type DroppingCard } from "../DroppingCard";
+import { DroppingCardList, type DroppingCard } from "../animations/DroppingCard";
 
 export function MomentsSlide({
   slide,

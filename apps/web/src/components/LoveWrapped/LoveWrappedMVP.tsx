@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { dummyData } from "@/data/slidesData";
-import { slideVariants } from "@/animations/slideVariants";
+import { slideVariants } from "@/components/animations/slideVariants";
 import { SlideRenderer } from "@/components/LoveWrapped/SlideRenderer";
 import { ProgressBar } from "@/components/LoveWrapped/ProgressBar";
 
