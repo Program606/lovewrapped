@@ -16,7 +16,6 @@ app.use(express.json());
 
 //routes
 app.use("/api", clientRouter);
-console.log("MONGO_URI =", process.env.MONGO_URI);
 if (!process.env.MONGO_URI) {
   throw new Error("MONGO_URI is missing from root .env");
 }
@@ -32,7 +31,7 @@ startServer().catch(console.error);
 
 //auth Google
 getAllResponses().catch(console.error);
-app.get("/api/debug", async (req, res) => {
+app.get("/auth/google/callback", async (req, res) => {
   const data = { message: "Hello from backend" };
 
   console.log("Backend log:", data);

@@ -2,10 +2,13 @@ import path from 'node:path';
 import {authenticate} from '@google-cloud/local-auth';
 import {forms} from '@googleapis/forms';
 import { fileURLToPath } from "node:url";
+import dotenv from "dotenv";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+dotenv.config({ path: path.resolve(__dirname, "../../../.env") });
 
+// const formID = process.env.FORM_ID
 const formID = process.env.FORM_ID
 // TODO: Replace with a valid response ID.
 const responseID = '<YOUR_RESPONSE_ID>';
