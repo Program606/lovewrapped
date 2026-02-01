@@ -4,6 +4,7 @@ import { connectDB, closeDB } from "./connectMongo.js";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
+import { getAllResponses } from "./googleForm.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,8 +28,18 @@ async function startServer() {
     console.log(`Server running on port ${process.env.PORT}`);
   });
 }
-
 startServer().catch(console.error);
+
+//auth Google
+getAllResponses().catch(console.error);
+app.get("/api/debug", async (req, res) => {
+  const data = { message: "Hello from backend" };
+
+  console.log("Backend log:", data);
+
+  res.json(data);
+});
+
 
 //shutdown
 process.on("SIGINT", async () => {

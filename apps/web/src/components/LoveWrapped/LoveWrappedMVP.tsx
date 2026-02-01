@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { dummyData } from "@/data/slidesData";
 import { slideVariants } from "@/components/animations/slideVariants";
@@ -26,6 +26,14 @@ export default function LoveWrappedMVP() {
   function goPrev() {
     setIndex(([i]) => [clamp(i - 1, 0, total - 1), -1]);
   }
+
+  useEffect(() => {
+  fetch("/api/debug")
+    .then(res => res.json())
+    .then(data => {
+      console.log("Frontend received:", data);
+    });
+}, []);
 
   return (
     <div className="relative h-screen w-full overflow-hidden" style={{ backgroundColor: current.bg }}>

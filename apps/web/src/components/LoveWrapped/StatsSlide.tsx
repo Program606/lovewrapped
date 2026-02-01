@@ -22,7 +22,7 @@ export function StatSlide({ slide }: { slide: StatsSlide }) {
           accentColor="rgba(255, 121, 176, 0.55)"
           paperPeek={28}
           threshold={0.75}
-          clicksToHalfOpen={3} // <-- only if your component supports it
+          clicksToHalfOpen={3}
         />
       </div>
     </div>

@@ -28,7 +28,7 @@ export default function EnvelopeLetter({
   envelopeColor = "#ff79b0",
   accentColor,
   paperPeek = 26,
-  threshold = 0.75,
+  threshold = 0.4,
   clicksToHalfOpen = 3,
 }: Props) {
   const reduce = useReducedMotion();
