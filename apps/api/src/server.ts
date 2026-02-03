@@ -14,12 +14,6 @@ dotenv.config({ path: path.resolve(__dirname, "../../../.env") });
 const app = express();
 app.use(express.json());
 
-//routes
-app.use("/api", clientRouter);
-if (!process.env.MONGO_URI) {
-  throw new Error("MONGO_URI is missing from root .env");
-}
-
 //start server
 async function startServer() {
   await connectDB();
@@ -27,18 +21,13 @@ async function startServer() {
     console.log(`Server running on port ${process.env.PORT}`);
   });
 }
-startServer().catch(console.error);
+startServer();
 
-//auth Google
-getAllResponses().catch(console.error);
-app.get("/auth/google/callback", async (req, res) => {
-  const data = { message: "Hello from backend" };
+// auth Google
+// getAllResponses();
 
-  console.log("Backend log:", data);
-
-  res.json(data);
-});
-
+//routes
+app.use("/api", clientRouter);
 
 //shutdown
 process.on("SIGINT", async () => {

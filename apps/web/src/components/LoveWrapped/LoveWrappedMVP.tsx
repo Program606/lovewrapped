@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
+import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
 import { dummyData } from "@/data/slidesData";
 import { slideVariants } from "@/components/animations/slideVariants";
@@ -16,7 +17,7 @@ export default function LoveWrappedMVP() {
 
   const progressPct = useMemo(
     () => ((index + 1) / total) * 100,
-    [index, total]
+    [index, total],
   );
 
   function goNext() {
@@ -26,17 +27,18 @@ export default function LoveWrappedMVP() {
   function goPrev() {
     setIndex(([i]) => [clamp(i - 1, 0, total - 1), -1]);
   }
-
+  async function fetchClientData() {
+    await axios.get("/api");
+  }
   useEffect(() => {
-  fetch("/api/debug")
-    .then(res => res.json())
-    .then(data => {
-      console.log("Frontend received:", data);
-    });
-}, []);
-
+    fetchClientData();
+  }, []);
+  
   return (
-    <div className="relative h-screen w-full overflow-hidden" style={{ backgroundColor: current.bg }}>
+    <div
+      className="relative h-screen w-full overflow-hidden"
+      style={{ backgroundColor: current.bg }}
+    >
       <ProgressBar progressPct={progressPct} />
 
       <AnimatePresence initial={false} custom={direction}>
