@@ -1,19 +1,21 @@
 import { useMemo, useState, useEffect } from "react";
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
-import { dummyData } from "@/data/slidesData";
 import { slideVariants } from "@/components/animations/slideVariants";
 import { SlideRenderer } from "@/components/LoveWrapped/SlideRenderer";
 import { ProgressBar } from "@/components/LoveWrapped/ProgressBar";
+import type { ApiSlidesResponse } from "@/types/slide";
 
 function clamp(n: number, min: number, max: number) {
   return Math.max(min, Math.min(max, n));
 }
 
 export default function LoveWrappedMVP() {
-  const total = dummyData.length;
+  const [slideData, setSlideData] = useState<ApiSlidesResponse>([]);
+  const total = slideData.length;
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
-  const current = dummyData[index];
+
+  const current = slideData[index];
 
   const progressPct = useMemo(
     () => ((index + 1) / total) * 100,
@@ -27,14 +29,14 @@ export default function LoveWrappedMVP() {
   function goPrev() {
     setIndex(([i]) => [clamp(i - 1, 0, total - 1), -1]);
   }
-  async function fetchClientData() {
-    const { data } = await axios.get("/api");
-    console.log(data);
-  }
   useEffect(() => {
+    const fetchClientData = async () => {
+      const { data } = await axios.get<ApiSlidesResponse>("/api");
+      setSlideData(data);
+    };
     fetchClientData();
   }, []);
-  
+  if (!current) return null;
   return (
     <div
       className="relative h-screen w-full overflow-hidden"
@@ -60,7 +62,7 @@ export default function LoveWrappedMVP() {
           }}
           className="absolute inset-0"
         >
-          <SlideRenderer slide={current} />
+          <SlideRenderer slide={current} slides={slideData} />
         </motion.div>
       </AnimatePresence>
     </div>

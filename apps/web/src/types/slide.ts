@@ -1,33 +1,25 @@
-export type SlideType = "intro" | "momentPage" | "moments" | "letter" | "stats";
 
 interface BaseSlide {
   id: string;
-  type: SlideType;
+  type: "intro" | "momentPage" | "moments" | "letter" | "stats";
   bg: string;
   accent: string;
 }
 
-interface IntroSlide extends BaseSlide {
-  id: string;
+export interface IntroSlideType extends BaseSlide {
   type: "intro";
   headline: string;
   subheadline: string;
   from: string;
   to: string;
-  bg: string;
-  accent: string;
 }
 
-interface MomentPageSlide extends BaseSlide {
-  id: string;
+export interface MomentPageSlideType extends BaseSlide {
   type: "momentPage";
   momentIndex: number;
-  bg: string;
-  accent: string;
 }
 
-interface MomentsSlide extends BaseSlide {
-  id: string;
+export interface MomentsSlideType extends BaseSlide {
   type: "moments";
   title: string;
   moments: Array<{
@@ -36,32 +28,26 @@ interface MomentsSlide extends BaseSlide {
     body: string;
     location?: string;
   }>;
-  bg: string;
-  accent: string;
 }
 
-interface LetterSlide extends BaseSlide {
-  id: string;
+export interface LetterSlideType extends BaseSlide {
   type: "letter";
   title: string;
   text: string;
   align?: "left" | "center";
-  bg: string;
-  accent: string;
 }
 
-interface StatsSlide extends BaseSlide {
-  id: string;
+export interface StatsSlideType extends BaseSlide {
   type: "stats";
   title: string;
   text: string;
-  bg: string;
-  accent: string;
 }
 
-export type Slide =
-  | IntroSlide
-  | MomentPageSlide
-  | MomentsSlide
-  | LetterSlide
-  | StatsSlide;
+export type ApiSlide =
+  | IntroSlideType
+  | MomentPageSlideType
+  | MomentsSlideType
+  | LetterSlideType
+  | StatsSlideType;
+
+export type ApiSlidesResponse = ApiSlide[];

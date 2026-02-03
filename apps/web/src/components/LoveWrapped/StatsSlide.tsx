@@ -1,10 +1,8 @@
-import type { Slide } from "@/types/slide";
+import type { StatsSlideType  } from "@/types/slide";
 import { VerticalSlideText } from "@/components/animations/VerticalTextTB";
 import EnvelopeLetter from "@/components/letter/EnvelopeLetter";
 
-type StatsSlide = Extract<Slide, { type: "stats" }>;
-
-export function StatSlide({ slide }: { slide: StatsSlide }) {
+export function StatSlide({ slide }: { slide: StatsSlideType  }) {
   return (
     <div className="h-full w-full px-6 text-white flex flex-col justify-center bg-red-400 z-2">
       <div className="w-full h-[600px] flex flex-col items-center gap-8 z-3">

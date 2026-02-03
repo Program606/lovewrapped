@@ -1,11 +1,11 @@
-import type { Slide } from "@/types/slide";
+import type { MomentsSlideType } from "@/types/slide";
 import { DroppingCardList, type DroppingCard } from "../animations/DroppingCard";
 
 export function MomentsSlide({
   slide,
   active = true,
 }: {
-  slide: Slide & { type: "moments" };
+  slide: MomentsSlideType  & { type: "moments" };
   active?: boolean;
 }) {
   // Convert slide.moments to DroppingCard format

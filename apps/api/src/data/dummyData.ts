@@ -1,5 +1,5 @@
 export const dummyData1 = [
-{
+  {
     id: "intro",
     type: "intro",
     headline: "Kyle, this is your LoveWrapped 💛",
@@ -29,6 +29,43 @@ export const dummyData1 = [
     title: "Top 5 moments with you..",
     bg: "#111827",
     accent: "#F97316",
+    moments: [
+      {
+        imageUrl:
+          "https://images.unsplash.com/photo-1680536844970-4f803d5097f5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Late-night talks",
+        body: "The kind where time disappears.",
+        location: "Your apartment",
+      },
+      {
+        imageUrl:
+          "https://images.unsplash.com/photo-1663361963652-e7c0a08c06d3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Coffee mornings",
+        body: "Your smile over a warm cup.",
+        location: "Our favorite cafe",
+      },
+      {
+        imageUrl:
+          "https://images.unsplash.com/photo-1600451210798-9e6aa1a21155?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Road trip adventures",
+        body: "Windows down, music loud, you by my side.",
+        location: "Pacific Coast Highway",
+      },
+      {
+        imageUrl:
+          "https://images.unsplash.com/photo-1644727783395-8bffbeba5273?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Sunset walks",
+        body: "Golden hour with your hand in mine.",
+        location: "The beach at sunset",
+      },
+      {
+        imageUrl:
+          "https://images.unsplash.com/photo-1600451210798-9e6aa1a21155?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Dancing in the kitchen",
+        body: "No music, just us and laughter.",
+        location: "Home",
+      },
+    ],
   },
   {
     id: "letter",

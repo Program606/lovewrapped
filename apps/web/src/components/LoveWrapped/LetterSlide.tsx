@@ -1,4 +1,4 @@
-import type { Slide } from "@/types/slide";
+import type { LetterSlideType } from "@/types/slide";
 
 function splitParagraphs(text: string) {
   return text
@@ -7,7 +7,7 @@ function splitParagraphs(text: string) {
     .filter(Boolean);
 }
 
-export function LetterSlide({ slide }: { slide: Slide & { type: "letter" } }) {
+export function LetterSlide({ slide }: { slide: LetterSlideType}) {
   {
     const paragraphs = splitParagraphs(slide.text);
 

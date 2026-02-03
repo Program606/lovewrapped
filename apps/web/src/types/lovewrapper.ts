@@ -15,7 +15,7 @@ export interface Person {
 export interface BaseSlide {
   id: string;
   type: SlideType;
-  order: number;
+  order?: number;
   backgroundColor?: string;
   accentColor?: string;
 }
@@ -30,7 +30,7 @@ export interface MemorySlide extends BaseSlide {
   type: "memory";
   title: string;
   description: string;
-  dateLabel?: string;   // "Summer 2023", "Our first date"
+  dateLabel?: string;
   imageUrl?: string;
 }
 
@@ -62,7 +62,7 @@ export type Slide =
 export interface LoveWrapperConfig {
   sender: Person;
   recipient: Person;
-  title: string; // e.g. "To Laura, with all my love"
+  title: string;
   theme: Theme;
   slides: Slide[];
 }
