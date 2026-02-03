@@ -1,5 +1,5 @@
 export const dummyData1 = [
-  {
+{
     id: "intro",
     type: "intro",
     headline: "Kyle, this is your LoveWrapped 💛",

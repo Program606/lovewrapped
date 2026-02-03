@@ -14,19 +14,10 @@ router.get("/", async (req, res) => {
     res.json({ message: err });
   }
 });
-//GET single client
+//GET single slide
 router.get("/:id", async (req, res) => {
-  const id = req.params.id;
-  let content;
-
-  try {
-    content = await fs.readFile("data/comments/${id}.txt", "utf-8");
-  } catch (err) {
-    //TODO:
-  }
-  res.json({
-    message: "Get client " + id,
-  });
+  const slide = dummyData1.find((n) => n.id === req.params.id);
+  res.send(slide);
 });
 //POST a new client
 // router.post("/", async (req, res) => {

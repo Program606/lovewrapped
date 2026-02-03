@@ -28,7 +28,8 @@ export default function LoveWrappedMVP() {
     setIndex(([i]) => [clamp(i - 1, 0, total - 1), -1]);
   }
   async function fetchClientData() {
-    await axios.get("/api");
+    const { data } = await axios.get("/api");
+    console.log(data);
   }
   useEffect(() => {
     fetchClientData();
