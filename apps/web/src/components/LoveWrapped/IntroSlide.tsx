@@ -1,6 +1,6 @@
-import type { IntroSlide } from "@/types/slide";
+import type { IntroSlideType } from "@/types/slide";
 
-export function IntroSlide({slide}: {slide: IntroSlide}) {
+export function IntroSlide({slide}: {slide: IntroSlideType}) {
   return (
     <div className="h-full w-full flex flex-col justify-center px-6 text-white">
       <div className="text-xs uppercase tracking-[0.25em] text-white/70">

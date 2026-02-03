@@ -237,7 +237,9 @@ export default function EnvelopeLetter({
                 console.log("drag end, progress =", p);
 
                 if (p >= threshold) {
-                  {console.log("Open gates")}
+                  {
+                    console.log("Open gates");
+                  }
                   setPhase("open");
                   handleOpenModal();
                   return;
@@ -311,13 +313,13 @@ export default function EnvelopeLetter({
           </div>
         )}
         {phase === "open" && (
-          <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-xs text-white/70">
+          <>
             <FullScreenLetterModal
               open={modalOpen}
               text={letterText}
               onClose={handleCloseModal}
             />
-          </div>
+          </>
         )}
       </motion.div>
     </div>

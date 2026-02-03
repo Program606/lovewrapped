@@ -1,6 +1,6 @@
 import type { ApiSlide, ApiSlidesResponse, MomentsSlideType } from "@/types/slide";
 import { IntroSlide } from "./IntroSlide";
-import { MomentsSlide } from "./MomentsSlide";
+// import { MomentsSlide } from "./MomentsSlide";
 import { MomentsSingle } from "./Moments/MomentsSingle";
 import { LetterSlide } from "./LetterSlide";
 import { StatSlide } from "./StatsSlide";
@@ -30,7 +30,7 @@ export function SlideRenderer({ slide, slides }: SlideRendererProps) {
   return <MomentsSingle moment={moment} />;
 }
 
-  if (slide.type === "moments") return <MomentsSlide slide={slide} />;
+  // if (slide.type === "moments") return <MomentsSlide slide={slide} />;
   if (slide.type === "letter") return <LetterSlide slide={slide} />;
 
   return null;
