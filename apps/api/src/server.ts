@@ -5,10 +5,10 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import { getAllResponses } from "./googleForm.js";
+import { toJSON } from "./util/formatter.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// Load root .env
 dotenv.config({ path: path.resolve(__dirname, "../../../.env") });
 
 const app = express();
@@ -16,15 +16,19 @@ app.use(express.json());
 
 //start server
 async function startServer() {
-  await connectDB();
+  console.log("Starting Server")
+  
+  // await connectDB();
   app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
   });
-}
-startServer();
 
-// auth Google
-// getAllResponses();
+  // auth Google
+  let responses =  await getAllResponses();
+  console.log(toJSON(responses));
+}
+
+startServer();
 
 //routes
 app.use("/api", clientRouter);

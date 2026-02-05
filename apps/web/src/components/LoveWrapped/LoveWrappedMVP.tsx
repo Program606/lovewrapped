@@ -36,7 +36,9 @@ export default function LoveWrappedMVP() {
     };
     fetchClientData();
   }, []);
+
   if (!current) return null;
+
   return (
     <div
       className="relative h-screen w-full overflow-hidden"
