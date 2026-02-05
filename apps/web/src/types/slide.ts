@@ -1,4 +1,3 @@
-
 interface BaseSlide {
   id: string;
   type: "intro" | "momentPage" | "moments" | "letter" | "stats";
@@ -14,22 +13,28 @@ export interface IntroSlideType extends BaseSlide {
   to: string;
 }
 
-export interface MomentPageSlideType extends BaseSlide {
-  type: "momentPage";
-  momentIndex: number;
-}
-
-export interface MomentsSlideType extends BaseSlide {
+export type MomentsSlideType = {
+  id: string;
   type: "moments";
   title: string;
-  moments: Array<{
-    imageUrl: string;
-    title: string;
-    body: string;
-    location?: string;
-  }>;
+  bg: string;
+  accent: string;
+  moments: Moment[];
+};
+export type MomentSingleSlideType = {
+  id: string;
+  type: "momentSingle";
+  parentId: string;
+  momentIndex: number;
+  bg: string;
+};
+export interface Moment {
+  order: number;
+  imageUrl: string;
+  title: string;
+  body: string;
+  location?: string;
 }
-
 export interface LetterSlideType extends BaseSlide {
   type: "letter";
   title: string;
@@ -45,7 +50,7 @@ export interface StatsSlideType extends BaseSlide {
 
 export type ApiSlide =
   | IntroSlideType
-  | MomentPageSlideType
+  | MomentSingleSlideType
   | MomentsSlideType
   | LetterSlideType
   | StatsSlideType;

@@ -5,13 +5,14 @@ import { slideVariants } from "@/components/animations/slideVariants";
 import { SlideRenderer } from "@/components/LoveWrapped/SlideRenderer";
 import { ProgressBar } from "@/components/LoveWrapped/ProgressBar";
 import type { ApiSlidesResponse } from "@/types/slide";
-
+import {dummyData1} from "../../data/dummyData";
 function clamp(n: number, min: number, max: number) {
   return Math.max(min, Math.min(max, n));
 }
 
 export default function LoveWrappedMVP() {
-  const [slideData, setSlideData] = useState<ApiSlidesResponse>([]);
+  const slideData: ApiSlidesResponse = (dummyData1);
+  // const [slideData, setSlideData] = useState<ApiSlidesResponse>([]);
   const total = slideData.length;
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
 
@@ -29,20 +30,20 @@ export default function LoveWrappedMVP() {
   function goPrev() {
     setIndex(([i]) => [clamp(i - 1, 0, total - 1), -1]);
   }
-  useEffect(() => {
-    const fetchClientData = async () => {
-      const { data } = await axios.get<ApiSlidesResponse>("/api");
-      setSlideData(data);
-    };
-    fetchClientData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchClientData = async () => {
+  //     const { data } = await axios.get<ApiSlidesResponse>("/api");
+  //     setSlideData(data);
+  //   };
+  //   fetchClientData();
+  // }, []);
 
   if (!current) return null;
 
   return (
     <div
       className="relative h-screen w-full overflow-hidden"
-      style={{ backgroundColor: current.bg }}
+      style={{ backgroundColor: current.bg}}
     >
       <ProgressBar progressPct={progressPct} />
 
