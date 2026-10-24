@@ -10,6 +10,16 @@ export const dummyData1 = [
     accent: "#F97316",
   },
   {
+    type: "threePhoto",
+    background: "https://plus.unsplash.com/premium_photo-1673292293042-cafd9c8a3ab3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    photos: [
+      "https://images.unsplash.com/photo-1676385901184-b1884f3f2979?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1706026423074-98c50eb7b10d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1716507939102-5364cb495b4d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    ],
+    caption: "Breath of Calm on break.",
+  },
+  {
     type: "photoDump",
     title: "Photo Dump",
     photos: [
@@ -19,7 +29,7 @@ export const dummyData1 = [
       "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
       "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
       "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     ],
     caption: "buzzing with life",
     accent: "#a855f7",

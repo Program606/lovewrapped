@@ -1,6 +1,6 @@
 interface BaseSlide {
   id: string;
-  type: "intro" | "moments" | "letter" | "stats";
+  type: string;
   bg: string;
   accent: string;
 }
@@ -38,14 +38,18 @@ export interface StatsSlideType extends BaseSlide {
   title: string;
   text: string;
 }
-export type PhotoDumpSlideType = {
+export interface PhotoDumpSlideType extends BaseSlide{
   type: "photoDump";
   title?: string;
   photos: string[];
   caption?: string;
-  accent?: string;
 };
-
+export interface ThreePhotoSlideType extends BaseSlide{
+  type: "threePhoto";
+  photos: string[]; // 3 photos
+  background: string;
+  caption?: string;
+};
 //Unused Slide
 export type SingleSlideType = {
   id: string;
@@ -60,6 +64,7 @@ export type ApiSlide =
   | MomentsSlideType
   | LetterSlideType
   | PhotoDumpSlideType
+  | ThreePhotoSlideType
   | StatsSlideType;
 
 export type ApiSlidesResponse = ApiSlide[];
