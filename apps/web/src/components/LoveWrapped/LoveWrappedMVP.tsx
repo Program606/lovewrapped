@@ -13,20 +13,17 @@ function clamp(n: number, min: number, max: number) {
 export default function LoveWrappedMVP() {
   // const slideData: ApiSlidesResponse = (dummyData1);
   const [slideData, setSlideData] = useState<ApiSlidesResponse>([]);
+  
   const total = slideData.length;
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
-
   const current = slideData[index];
-
   const progressPct = useMemo(
     () => ((index + 1) / total) * 100,
     [index, total],
   );
-
   function goNext() {
     setIndex(([i]) => [clamp(i + 1, 0, total - 1), 1]);
   }
-
   function goPrev() {
     setIndex(([i]) => [clamp(i - 1, 0, total - 1), -1]);
   }

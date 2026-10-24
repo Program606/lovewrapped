@@ -10,6 +10,21 @@ export const dummyData1 = [
     accent: "#F97316",
   },
   {
+    type: "photoDump",
+    title: "Photo Dump",
+    photos: [
+      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1762324858841-3ab8c2c1f383?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+    ],
+    caption: "buzzing with life",
+    accent: "#a855f7",
+  },
+  {
     id: "stats",
     type: "stats",
     title: "You began talking 3587 days ago..",

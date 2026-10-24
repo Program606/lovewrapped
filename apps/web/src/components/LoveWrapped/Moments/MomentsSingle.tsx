@@ -1,12 +1,6 @@
-type Moment = {
-  order: number;
-  imageUrl: string;
-  title: string;
-  body: string;
-  location?: string;
-};
+import type { MomentDetails } from "@/types/slide";
 
-export function MomentsSingle({ moment }: { moment: Moment }) {
+export function MomentsSingle({ moment }: { moment: MomentDetails }) {
   return (
     <div className="h-full w-full bg-[#0B1220]">
       <div className="flex h-full w-full flex-col px-0 pt-5 pb-6">

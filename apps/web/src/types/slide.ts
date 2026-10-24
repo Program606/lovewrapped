@@ -4,7 +4,6 @@ interface BaseSlide {
   bg: string;
   accent: string;
 }
-
 export interface IntroSlideType extends BaseSlide {
   type: "intro";
   headline: string;
@@ -19,16 +18,9 @@ export type MomentsSlideType = {
   title: string;
   bg: string;
   accent: string;
-  moments: Moment[];
+  moments: MomentDetails[];
 };
-export type SingleSlideType = {
-  id: string;
-  type: "singleMain";
-  parentId: string;
-  momentIndex: number;
-  bg: string;
-};
-export interface Moment {
+export interface MomentDetails {
   order: number;
   imageUrl: string;
   title: string;
@@ -41,17 +33,33 @@ export interface LetterSlideType extends BaseSlide {
   text: string;
   align?: "left" | "center";
 }
-
 export interface StatsSlideType extends BaseSlide {
   type: "stats";
   title: string;
   text: string;
 }
+export type PhotoDumpSlideType = {
+  type: "photoDump";
+  title?: string;
+  photos: string[];
+  caption?: string;
+  accent?: string;
+};
+
+//Unused Slide
+export type SingleSlideType = {
+  id: string;
+  type: "singleMain";
+  parentId: string;
+  momentIndex: number;
+  bg: string;
+};
 
 export type ApiSlide =
   | IntroSlideType
   | MomentsSlideType
   | LetterSlideType
+  | PhotoDumpSlideType
   | StatsSlideType;
 
 export type ApiSlidesResponse = ApiSlide[];
