@@ -2,7 +2,7 @@ export const dummyData1 = [
   {
     id: "intro",
     type: "intro",
-    headline: "Kyle, this is your LoveWrapped 💛",
+    headline: "Kyle, this is your LoveWrapped Poop 💛",
     subheadline: "MRFSA Presents LoveWrapped",
     from: "Prince",
     to: "Kyle",
@@ -16,12 +16,6 @@ export const dummyData1 = [
     text: "42 late-night talks, 17 spontaneous laughs, 6 road trips, and one unforgettable year together.",
     bg: "#0F172A",
     accent: "#38BDF8",
-  },
-  {
-    id: `moment`,
-    type: "momentPage",
-    bg: "#111827",
-    accent: "#F97316",
   },
   {
     id: "moments",

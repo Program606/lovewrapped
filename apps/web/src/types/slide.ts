@@ -1,6 +1,6 @@
 interface BaseSlide {
   id: string;
-  type: "intro" | "momentPage" | "moments" | "letter" | "stats";
+  type: "intro" | "moments" | "letter" | "stats";
   bg: string;
   accent: string;
 }
@@ -21,9 +21,9 @@ export type MomentsSlideType = {
   accent: string;
   moments: Moment[];
 };
-export type MomentSingleSlideType = {
+export type SingleSlideType = {
   id: string;
-  type: "momentSingle";
+  type: "singleMain";
   parentId: string;
   momentIndex: number;
   bg: string;
@@ -50,7 +50,6 @@ export interface StatsSlideType extends BaseSlide {
 
 export type ApiSlide =
   | IntroSlideType
-  | MomentSingleSlideType
   | MomentsSlideType
   | LetterSlideType
   | StatsSlideType;

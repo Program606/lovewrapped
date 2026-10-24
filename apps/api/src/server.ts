@@ -4,8 +4,6 @@ import { connectDB, closeDB } from "./connectMongo.js";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
-import { getAllResponses } from "./googleForm.js";
-import { toJSON } from "./util/formatter.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,16 +14,14 @@ app.use(express.json());
 
 //start server
 async function startServer() {
-  console.log("Starting Server")
-  
+  console.log("Starting Server");
+
   // await connectDB();
   app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
   });
 
   // auth Google
-  let responses =  await getAllResponses();
-  console.log(toJSON(responses));
 }
 
 startServer();
