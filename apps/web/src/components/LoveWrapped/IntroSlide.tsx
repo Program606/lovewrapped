@@ -1,6 +1,7 @@
 import type { IntroSlideType } from "@/types/slide";
-
-export function IntroSlide({slide}: {slide: IntroSlideType}) {
+import { GoogleDriverPlayer } from "../audio/GoogleDrivePlayer";
+import { MusicPlayer } from "../audio/MusicPlayer";
+export function IntroSlide({ slide }: { slide: IntroSlideType }) {
   return (
     <div className="h-full w-full flex flex-col justify-center px-6 text-white">
       <div className="text-xs uppercase tracking-[0.25em] text-white/70">
@@ -14,9 +15,13 @@ export function IntroSlide({slide}: {slide: IntroSlideType}) {
       <p className="mt-4 text-base text-white/80 max-w-sm">
         {slide.subheadline}
       </p>
-
+      <GoogleDriverPlayer/>
+      {/* <MusicPlayer/> */}
       <div className="mt-10 flex items-center gap-3">
-        <div className="h-2 w-2 rounded-full" style={{ backgroundColor: slide.accent }} />
+        <div
+          className="h-2 w-2 rounded-full"
+          style={{ backgroundColor: slide.accent }}
+        />
         <div className="text-sm text-white/70">
           Music can start here (later: sync lyrics/text)
         </div>
